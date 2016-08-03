@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Leitura_Binario</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="binary_title">Números Binários</string>
+    <string name="phrase_title">Palavra ou frase desejada</string>
+
+</resources>
