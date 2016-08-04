@@ -1,17 +1,33 @@
 package com.example.leitura_binario;
 
+import botoes.Convert;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class Binary_Main extends Activity {
 
+	private TextView resultado;
+	private Convert convert = new Convert();
+	private EditText textoParaConversao;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_binary__main);
+        resultado = (TextView) findViewById(R.id.labelResultado);
+        
+        textoParaConversao = (EditText) findViewById(R.id.edtPalavraToBinario);
+        
+        listenerClick();
+        
     }
 
     @Override
@@ -32,4 +48,27 @@ public class Binary_Main extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
+    
+    private void listenerClick() {
+    	final Button button = (Button) findViewById(R.id.btnPalavraToBinario);
+        button.setOnClickListener(new View.OnClickListener() {
+	        public void onClick(View v) {
+	
+	
+	        	Log.e("Edit Text", textoParaConversao.toString());
+            	resultado.setText(convert.conversao(textoParaConversao.getText().toString()));
+	
+	
+	        }
+        });
+	}
+
+	public Convert getConvert() {
+		return convert;
+	}
+
+	public void setConvert(Convert convert) {
+		this.convert = convert;
+	}
+
 }
