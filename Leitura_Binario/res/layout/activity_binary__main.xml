@@ -8,42 +8,78 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.leitura_binario.Binary_Main" >
 
-    <Button
-        android:id="@+id/btnPalavraToBinario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:text="Convert" />
-
-    <TextView
-        android:id="@+id/labelResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btnPalavraToBinario"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="113dp" />
-
     <EditText
         android:id="@+id/edtPalavraToBinario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/labelResultado"
+        android:layout_below="@+id/labelPalavra"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp"
-        android:ems="10" >
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/btnPalavraToBinario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="21dp"
+        android:text="@string/button_binary_convert" />
+
+    <Button
+        android:id="@+id/btnBinarioToPalavra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnPalavraToBinario"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="@string/button_text_convert" />
+
+    <TextView
+        android:id="@+id/labelResultadoBinario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnBinarioToPalavra"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/edtBinarioToPalavra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/labelBinario"
+        android:layout_marginTop="22dp"
+        android:ems="10"
+        android:inputType="number" >
 
         <requestFocus />
     </EditText>
 
     <TextView
+        android:id="@+id/labelResultadoPalavra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/labelResultadoBinario"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp" />
+
+    <TextView
+        android:id="@+id/labelBinario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/binary_title" />
+
+    <TextView
         android:id="@+id/labelPalavra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/edtPalavraToBinario"
-        android:layout_marginBottom="46dp"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_below="@+id/edtBinarioToPalavra"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
         android:text="@string/phrase_title" />
 
 </RelativeLayout>

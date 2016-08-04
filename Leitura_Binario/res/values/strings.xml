@@ -6,5 +6,7 @@
     <string name="action_settings">Settings</string>
     <string name="binary_title">Números Binários</string>
     <string name="phrase_title">Palavra ou frase desejada</string>
+    <string name="button_binary_convert">Converter para Binário</string>
+    <string name="button_text_convert">Converter para Texto</string>
 
 </resources>

@@ -14,17 +14,21 @@ import android.widget.TextView;
 
 public class Binary_Main extends Activity {
 
-	private TextView resultado;
+	private TextView resultadoBinario;
+	private TextView resultadoPalavra;
 	private Convert convert = new Convert();
-	private EditText textoParaConversao;
+	private EditText textoParaConversaoBinario;
+	private EditText textoParaConversaoPalavra;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_binary__main);
-        resultado = (TextView) findViewById(R.id.labelResultado);
+        resultadoBinario = (TextView) findViewById(R.id.labelResultadoBinario);
+        textoParaConversaoBinario = (EditText) findViewById(R.id.edtPalavraToBinario);
         
-        textoParaConversao = (EditText) findViewById(R.id.edtPalavraToBinario);
+        resultadoPalavra = (TextView) findViewById(R.id.labelResultadoPalavra);
+        textoParaConversaoPalavra = (EditText) findViewById(R.id.edtBinarioToPalavra);
         
         listenerClick();
         
@@ -50,13 +54,25 @@ public class Binary_Main extends Activity {
     }
     
     private void listenerClick() {
-    	final Button button = (Button) findViewById(R.id.btnPalavraToBinario);
-        button.setOnClickListener(new View.OnClickListener() {
+    	final Button buttonBinary = (Button) findViewById(R.id.btnPalavraToBinario);
+    	buttonBinary.setOnClickListener(new View.OnClickListener() {
 	        public void onClick(View v) {
 	
 	
-	        	Log.e("Edit Text", textoParaConversao.toString());
-            	resultado.setText(convert.conversao(textoParaConversao.getText().toString()));
+	        	Log.e("Edit Text", textoParaConversaoBinario.toString());
+	        	resultadoBinario.setText(convert.conversaoParaBinario(textoParaConversaoBinario.getText().toString()));
+	
+	
+	        }
+        });
+        
+        final Button buttonWord = (Button) findViewById(R.id.btnBinarioToPalavra);
+        buttonWord.setOnClickListener(new View.OnClickListener() {
+	        public void onClick(View v) {
+	
+	
+	        	Log.e("Edit Text", textoParaConversaoPalavra.toString());
+	        	resultadoPalavra.setText(convert.conversaoParaPalavra(textoParaConversaoPalavra.getText().toString()));
 	
 	
 	        }
